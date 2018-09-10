@@ -6,6 +6,10 @@
 [![GitHub stars](https://img.shields.io/github/stars/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/stargazers)
 [![GitHub license](https://img.shields.io/github/license/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/blob/master/LICENSE)
 
+# 用途
+定时将服务器上的文件或文件夹备份到网络云存储（阿里云oss或腾讯云cos）。  
+可以设置在多个时间点，备份多个文件或文件夹到多个网络云存储。  
+
 # 支持的云存储
 [阿里云OSS](https://www.aliyun.com/product/oss)  
 [腾讯云COS](https://cloud.tencent.com/product/cos)  
