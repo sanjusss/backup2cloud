@@ -59,7 +59,7 @@ docker run --rm -v /D/share:/conf sanjusss/backup2cloud eg -s /conf/eg.json
       "0,30 * * * * ?"
     ],
     "uploader": {
-      "endpoint": "su.bcebos.com",
+      "endpoint": "https://su.bcebos.com",
       "id": "百度云AccessKeyId",
       "key": "百度云SecretAccessKey",
       "bucket": "backup",
