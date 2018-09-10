@@ -17,10 +17,11 @@
 # 使用方法(Docker)
 ## 运行
 ```
-docker run --rm -v /xxx/yyy:/data -v /etc/backup2cloud:/conf sanjusss/backup2cloud run -c /conf/backup2cloud.json
+docker run -d --restart=always -v /etc/localtime:/etc/localtime:ro -v /xxx/yyy:/data -v /etc/backup2cloud:/conf sanjusss/backup2cloud run -c /conf/backup2cloud.json
 ```
 运行后程序将加载配置文件backup2cloud.json。  
-注意文件夹的挂载。
+`-v /etc/localtime:/etc/localtime:ro`保证了docker容器内时区和外部环境一样，否则默认使用UTC时间。  
+注意文件夹的挂载。  
 
 ## 查看示例配置文件
 ```
