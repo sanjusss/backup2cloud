@@ -5,22 +5,25 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <NeutralLanguage></NeutralLanguage>
-    <AssemblyVersion>0.0.1.0910</AssemblyVersion>
-    <FileVersion>0.0.1.0909</FileVersion>
-    <Version>0.0.1.0910</Version>
+    <AssemblyVersion>0.0.2.0910</AssemblyVersion>
+    <FileVersion>0.0.2.0910</FileVersion>
+    <Version>0.0.2.0910</Version>
     <Authors>sanjusss</Authors>
     <Company />
-    <Description>定时将服务器上的文件备份到阿里云oss或腾讯云cos。</Description>
+    <Description>定时将服务器上的文件备份到云存储。</Description>
     <PackageLicenseUrl>https://github.com/sanjusss/backup2cloud/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/sanjusss/backup2cloud</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sanjusss/backup2cloud</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Aliyun.OSS.DotNetCore" Version="2.8.0" />
-    <PackageReference Include="BceSdkDotNetCore" Version="1.0.2.910" />
+    <PackageReference Include="BceSdkDotNetCore" Version="1.0.2.911" />
     <PackageReference Include="CommandLineParser" Version="2.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="QCloudSDK.COS" Version="1.0.0" />
+    <PackageReference Include="Qiniu.Shared" Version="7.2.15" />
     <PackageReference Include="Quartz" Version="3.0.6" />
     <PackageReference Include="SharpCompress" Version="0.22.0" />
   </ItemGroup>

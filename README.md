@@ -14,6 +14,7 @@
 [阿里云OSS](https://www.aliyun.com/product/oss)  
 [腾讯云COS](https://cloud.tencent.com/product/cos)  
 [百度云BOS](https://cloud.baidu.com/product/bos.html)  
+[七牛云对象存储](https://www.qiniu.com/products/kodo)  
 
 # 使用方法(Docker)
 ## 运行
@@ -29,8 +30,8 @@ docker run -d --restart=always -v /etc/localtime:/etc/localtime:ro -v /xxx/yyy:/
 docker run --rm -v /D/share:/conf sanjusss/backup2cloud eg -s /conf/eg.json
 ```
 运行后将在D:\share\eg.json生成示例配置文件。  
-如果省略`-s /conf/eg.json`，将不保存文件，仅在命令行下输出。
-示例文件 [点我](example.json)  
+如果省略`-s /conf/eg.json`，将不保存文件，仅在命令行下输出。  
+示例文件 [点我](https://github.com/sanjusss/backup2cloud/blob/master/example.json)  
 实际的配置文件中没有Tips一项。  
 
 ## 查看命令帮助
