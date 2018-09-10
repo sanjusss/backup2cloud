@@ -52,3 +52,4 @@ https://github.com/zhengchun/qcloud-sdk-net
 https://github.com/adamhathcock/sharpcompress  
 https://www.quartz-scheduler.net  
 https://github.com/sanjusss/bce-sdk-dotnet  
+https://github.com/fengyhack/csharp-sdk  
