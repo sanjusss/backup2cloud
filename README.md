@@ -13,6 +13,7 @@
 # 支持的云存储
 [阿里云OSS](https://www.aliyun.com/product/oss)  
 [腾讯云COS](https://cloud.tencent.com/product/cos)  
+[百度云BOS](https://cloud.baidu.com/product/bos.html)  
 
 # 使用方法(Docker)
 ## 运行
@@ -46,7 +47,25 @@ docker run --rm -v /D/share:/conf sanjusss/backup2cloud eg -s /conf/eg.json
       "bucket": "backup",
       "path": "data/some",
       "timeout": 200000,
-      "Tips": "endpoint：地域节点（可以在控制台查看）；id：阿里云AccessKeySecret；secret：阿里云AccessKeySecret；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒"
+      "Tips": "endpoint：地域节点（可以在控制台查看）；id：阿里云AccessKeyId（可以在控制台查看）；secret：阿里云AccessKeySecret（可以在控制台查看）；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒"
+    },
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+  },
+  {
+    "name": "上传到 baidu",
+    "provider": "baidu",
+    "path": "/data",
+    "crontab": [
+      "0,30 * * * * ?"
+    ],
+    "uploader": {
+      "endpoint": "su.bcebos.com",
+      "id": "百度云AccessKeyId",
+      "key": "百度云SecretAccessKey",
+      "bucket": "backup",
+      "path": "data/some",
+      "timeout": 200000,
+      "Tips": "endpoint：地域节点北京区域：bj.bcebos.com，广州区域：gz.bcebos.com，苏州区域：su.bcebos.com（可以在控制台查看）；id：百度云AccessKeyId（可以在控制台查看）；secret：百度云SecretAccessKey（可以在控制台查看）；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒"
     },
     "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
   },
@@ -87,3 +106,4 @@ https://github.com/commandlineparser/commandline
 https://github.com/zhengchun/qcloud-sdk-net  
 https://github.com/adamhathcock/sharpcompress  
 https://www.quartz-scheduler.net  
+https://github.com/sanjusss/bce-sdk-dotnet  

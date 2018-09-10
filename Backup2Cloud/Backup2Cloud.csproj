@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Aliyun.OSS.DotNetCore" Version="2.8.0" />
+    <PackageReference Include="BceSdkDotNetCore" Version="1.0.2.910" />
     <PackageReference Include="CommandLineParser" Version="2.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="QCloudSDK.COS" Version="1.0.0" />
