@@ -30,63 +30,7 @@ docker run --rm -v /D/share:/conf sanjusss/backup2cloud eg -s /conf/eg.json
 ```
 运行后将在D:\share\eg.json生成示例配置文件。  
 如果省略`-s /conf/eg.json`，将不保存文件，仅在命令行下输出。
-示例文件如下：
-```
-[
-  {
-    "name": "上传到 aliyun",
-    "provider": "aliyun",
-    "path": "/data",
-    "crontab": [
-      "0,30 * * * * ?"
-    ],
-    "uploader": {
-      "endpoint": "oss-cn-hangzhou.aliyuncs.com",
-      "id": "阿里云AccessKeyId",
-      "secret": "阿里云AccessKeySecret",
-      "bucket": "backup",
-      "path": "data/some",
-      "timeout": 200000,
-      "Tips": "endpoint：地域节点（可以在控制台查看）；id：阿里云AccessKeyId（可以在控制台查看）；secret：阿里云AccessKeySecret（可以在控制台查看）；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒"
-    },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
-  },
-  {
-    "name": "上传到 baidu",
-    "provider": "baidu",
-    "path": "/data",
-    "crontab": [
-      "0,30 * * * * ?"
-    ],
-    "uploader": {
-      "endpoint": "https://su.bcebos.com",
-      "id": "百度云AccessKeyId",
-      "key": "百度云SecretAccessKey",
-      "bucket": "backup",
-      "path": "data/some",
-      "timeout": 200000,
-      "Tips": "endpoint：地域节点北京区域：bj.bcebos.com，广州区域：gz.bcebos.com，苏州区域：su.bcebos.com（可以在控制台查看）；id：百度云AccessKeyId（可以在控制台查看）；secret：百度云SecretAccessKey（可以在控制台查看）；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒"
-    },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
-  },
-  {
-    "name": "上传到 qcloud",
-    "provider": "qcloud",
-    "path": "/data",
-    "crontab": [
-      "0,30 * * * * ?"
-    ],
-    "uploader": {
-      "appId": "123456",
-      "secretId": "xxxx",
-      "secretKey": "yyyy",
-      "url": "https://backup-123456.cos.ap-chengdu.myqcloud.com/test",
-      "Tips": "appId：腾讯云 APPID（可以在控制台查看）；secretId：腾讯云 SecretId（可以在控制台查看）；secretKey：腾讯云 SecretKey（可以在控制台查看）；url：绝对路径，例如\"https://backup-123456.cos.ap-chengdu.myqcloud.com/test\"，最终会生成类似\"https://backup-123456.cos.ap-chengdu.myqcloud.com/test201809092054.zip\"之类的文件，可以在 控制台-对象存储-存储桶列表-点击实际的桶名称-基础设置-访问域名 中找到url的前部分，后部分是文件相对于桶的路径"
-    },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
-  }
-]
-```
+示例文件 [点我](example.json)  
 实际的配置文件中没有Tips一项。  
 
 ## 查看命令帮助
