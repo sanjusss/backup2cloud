@@ -5,9 +5,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <NeutralLanguage></NeutralLanguage>
-    <AssemblyVersion>0.0.2.0910</AssemblyVersion>
-    <FileVersion>0.0.2.0910</FileVersion>
-    <Version>0.0.2.0910</Version>
+    <AssemblyVersion>0.0.2.0911</AssemblyVersion>
+    <FileVersion>0.0.2.0911</FileVersion>
+    <Version>0.0.2.0911</Version>
     <Authors>sanjusss</Authors>
     <Company />
     <Description>定时将服务器上的文件备份到云存储。</Description>

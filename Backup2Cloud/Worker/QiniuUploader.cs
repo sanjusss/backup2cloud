@@ -2,8 +2,6 @@
 using Qiniu.IO.Model;
 using Qiniu.Util;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Backup2Cloud.Worker
@@ -100,7 +98,11 @@ namespace Backup2Cloud.Worker
             string json = putPolicy.ToJsonString();
             string token = Auth.CreateUploadToken(mac, json);
             UploadManager um = new UploadManager();
-            await um.UploadFileAsync(file, key, token);
+            var result = await um.UploadFileAsync(file, key, token);
+            if (result.Code != 200)
+            {
+                throw new Exception("上传失败，服务器返回错误信息：" + result.Text);
+            }
         }
     }
 }
