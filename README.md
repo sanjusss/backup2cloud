@@ -51,8 +51,7 @@ docker run --rm sanjusss/backup2cloud --version
 
 # 使用方法(Windows)
 ### 下载
-[点我打开软件下载页面](https://github.com/sanjusss/backup2cloud/releases)  
-除了软件本体之外，还需要安装.NET Core 2.0或更新运行库。[点我打开下载页面](https://www.microsoft.com/net/download),选择`Download .NET Core Runtime`下载。
+[点我打开软件下载页面](https://github.com/sanjusss/backup2cloud/releases/latest)  
 
 ### 运行
 ```
