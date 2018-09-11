@@ -5,9 +5,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <NeutralLanguage></NeutralLanguage>
-    <AssemblyVersion>0.0.3.0911</AssemblyVersion>
-    <FileVersion>0.0.3.0911</FileVersion>
-    <Version>0.0.3.0911</Version>
+    <AssemblyVersion>0.0.4.0</AssemblyVersion>
+    <FileVersion>0.0.4.0</FileVersion>
+    <Version>0.0.4</Version>
     <Authors>sanjusss</Authors>
     <Company />
     <Description>定时将服务器上的文件备份到云存储。</Description>
@@ -26,6 +26,7 @@
     <PackageReference Include="Qiniu.Shared" Version="7.2.15" />
     <PackageReference Include="Quartz" Version="3.0.6" />
     <PackageReference Include="SharpCompress" Version="0.22.0" />
+    <PackageReference Include="UCloudSDK.NetCore" Version="1.0.11" />
   </ItemGroup>
 
 </Project>

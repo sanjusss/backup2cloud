@@ -22,19 +22,27 @@ namespace Backup2Cloud.Worker
             try
             {
                 var conf = (SingleConfiguration)(context.MergedJobDataMap[WorkScheduler.ConfKey]);
+                string file = null;
                 try
                 {
                     DateTime start = DateTime.Now;
                     string suffix = start.ToString("yyyyMMddHHmmss") + ".zip";
-                    string file = Compress(conf.path);
+                    file = Compress(conf.path);
                     await conf.uploader.Upload(file, suffix);
                     DateTime end = DateTime.Now;
                     Log.Info(string.Format("上传成功，用时{0}秒。", (end - start).TotalSeconds), conf.name);
-                    File.Delete(file);//删除压缩包
                 }
                 catch (Exception e)
                 {
                     Log.Error(e.ToString(), conf.name);
+                }
+                finally
+                {
+                    if (string.IsNullOrEmpty(file) == false &&
+                        File.Exists(file))
+                    {
+                        File.Delete(file);//删除压缩包
+                    }
                 }
             }
             catch (Exception e)

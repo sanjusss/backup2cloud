@@ -3,7 +3,7 @@ using Aliyun.OSS.Common;
 using System;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Worker.Uploader
 {
     /// <summary>
     /// 阿里云上传实现类。

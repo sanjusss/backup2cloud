@@ -1,5 +1,5 @@
 ﻿
-version: 0.0.3.0911.{build}
+version: 0.0.4.{build}
 image: Visual Studio 2017
 shallow_clone: true
 build_script:

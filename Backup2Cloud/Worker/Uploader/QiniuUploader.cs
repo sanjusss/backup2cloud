@@ -4,7 +4,7 @@ using Qiniu.Util;
 using System;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Worker.Uploader
 {
     /// <summary>
     /// 七牛云对象存储上传实现类。
@@ -46,7 +46,6 @@ namespace Backup2Cloud.Worker
             {
                 return "accessKey：七牛云AccessKey（可以在控制台查看）；" +
                     "secretKey：七牛云SecretKey（可以在控制台查看）；" +
-                    "url：绝对路径，例如\"https://backup-123456.cos.ap-chengdu.myqcloud.com/test\"，" +
                     "bucket：存储空间名" +
                     "path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；" +
                     "timeout：上传超时时间，单位毫秒，可以不设置；" +

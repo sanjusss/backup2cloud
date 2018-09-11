@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Worker.Uploader
 {
     /// <summary>
     /// 上传文件接口，实现此接口需要同时引用ProviderNameAttribute表明服务商。

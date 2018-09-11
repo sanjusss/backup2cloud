@@ -7,7 +7,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Worker.Uploader
 {
     /// <summary>
     /// 百度云上传实现类。

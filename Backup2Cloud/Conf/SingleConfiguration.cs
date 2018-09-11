@@ -1,4 +1,5 @@
 ﻿using Backup2Cloud.Worker;
+using Backup2Cloud.Worker.Uploader;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

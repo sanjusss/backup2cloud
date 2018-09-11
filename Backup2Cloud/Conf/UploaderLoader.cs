@@ -1,5 +1,6 @@
 ﻿using Backup2Cloud.Logging;
 using Backup2Cloud.Worker;
+using Backup2Cloud.Worker.Uploader;
 using System;
 using System.Collections.Generic;
 
