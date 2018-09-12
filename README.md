@@ -21,8 +21,6 @@
 [AWS S3](https://amazonaws-china.com/cn/s3/)、
 [UCloud对象存储（UFile）](https://www.ucloud.cn/site/product/ufile.html) 
 
-注意：没有测试过能否上传AWS S3，仅写了功能实现。欢迎有AWS账号且通过验证的同学测试。
-
 # 使用方法(Docker)
 ### 运行
 ```

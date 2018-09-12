@@ -28,7 +28,7 @@ namespace Backup2Cloud.Worker.Uploader
         /// </summary>
         public string awsSecretAccessKey;
         /// <summary>
-        /// AWS S3 Bucket
+        /// AWS S3 Bucket/桶
         /// </summary>
         public string bucket;
         /// <summary>
@@ -45,8 +45,8 @@ namespace Backup2Cloud.Worker.Uploader
                 return "regionSystemName：区域的系统名，例如 us-west-1" +
                     "awsAccessKeyId：AWS Access Key ID；" +
                     "awsSecretAccessKey：AWS Secret Access Key；" +
-                    "bucket：存储空间名；" +
-                    "path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件";
+                    "bucket：Bucket/桶；" +
+                    "path：文件在Bucket/桶下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件";
             }
         }
         /// <summary>
