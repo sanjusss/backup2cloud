@@ -30,7 +30,7 @@
       "awsSecretAccessKey": "yyy",
       "bucket": "backup",
       "path": "data/file",
-      "Tips": "regionSystemName：区域的系统名，例如 us-west-1awsAccessKeyId：AWS Access Key ID；awsSecretAccessKey：AWS Secret Access Key；bucket：存储空间名；path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件"
+      "Tips": "regionSystemName：区域的系统名，例如 us-west-1awsAccessKeyId：AWS Access Key ID；awsSecretAccessKey：AWS Secret Access Key；bucket：Bucket/桶；path：文件在Bucket/桶下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件"
     },
     "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
   },
@@ -49,6 +49,40 @@
       "path": "data/some",
       "timeout": 200000,
       "Tips": "endpoint：地域节点北京区域：https://bj.bcebos.com ，广州区域：https://gz.bcebos.com， 苏州区域：https://su.bcebos.com （可以在控制台查看）；id：百度云AccessKeyId（可以在控制台查看）；secret：百度云SecretAccessKey（可以在控制台查看）；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒"
+    },
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+  },
+  {
+    "name": "上传到 huawei",
+    "provider": "huawei",
+    "path": "/data",
+    "crontab": [
+      "0,30 * * * * ?"
+    ],
+    "uploader": {
+      "endpoint": "obs.cn-north-1.myhwclouds.com",
+      "accessKeyId": "xxxx",
+      "secretAccessKey": "yyyy",
+      "bucket": "backup",
+      "path": "data/some",
+      "deleteAfterDays": 20,
+      "Tips": "endpoint：地域节点（可以在控制台查看）；accessKeyId：华为云 Access Key Id（可以在控制台查看）；secretAccessKey：华为云 Secret Access Key（可以在控制台查看）；bucket：桶名称path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；deleteAfterDays：多少天后自动删除，可以不设置"
+    },
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+  },
+  {
+    "name": "上传到 JDCloud",
+    "provider": "JDCloud",
+    "path": "/data",
+    "crontab": [
+      "0,30 * * * * ?"
+    ],
+    "uploader": {
+      "domain": "backup.oss.cn-east-2.jcloudcs.com",
+      "accessKeyId": "xxxx",
+      "secretAccessKey": "yyy",
+      "path": "data/file",
+      "Tips": "domain：对象存储空间的外网访问域名，在 对象存储-空间管理-空间信息 里查看，例如backup.oss.cn-east-2.jcloudcs.comaccessKeyId：Access Key ID；secretAccessKey：Secret Access Key；path：文件在Bucket/桶下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件"
     },
     "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
   },

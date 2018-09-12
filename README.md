@@ -10,7 +10,7 @@
 [![GitHub license](https://img.shields.io/github/license/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/blob/master/LICENSE)
 
 # 用途
-定时将服务器上的文件或文件夹备份到网络云存储（阿里云oss或腾讯云cos）。  
+定时将服务器上的文件或文件夹备份到网络云存储（OSS或S3）。  
 可以设置在多个时间点，备份多个文件或文件夹到多个网络云存储。  
 
 # 支持的云存储
@@ -20,7 +20,8 @@
 [七牛云对象存储](https://www.qiniu.com/products/kodo)、
 [AWS S3](https://amazonaws-china.com/cn/s3/)、
 [UCloud对象存储（UFile）](https://www.ucloud.cn/site/product/ufile.html)、
-[华为云OBS](https://www.huaweicloud.com/product/obs.html) 
+[华为云OBS](https://www.huaweicloud.com/product/obs.html)、
+[京东云](https://www.jdcloud.com/products/cloudstorag)
 
 # 使用方法(Docker)
 ### 运行
@@ -50,7 +51,6 @@ docker run --rm sanjusss/backup2cloud --help
 docker run --rm sanjusss/backup2cloud --version
 ```
 
-
 # 使用方法(Windows)
 ### 下载
 [点我打开软件下载页面](https://github.com/sanjusss/backup2cloud/releases/latest)  
@@ -79,7 +79,6 @@ backup2cloud --help
 ```
 backup2cloud --version
 ```
-
 
 # 引用项目
 https://www.newtonsoft.com/json  
