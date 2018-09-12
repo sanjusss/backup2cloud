@@ -19,7 +19,8 @@
 [百度云BOS](https://cloud.baidu.com/product/bos.html)、
 [七牛云对象存储](https://www.qiniu.com/products/kodo)、
 [AWS S3](https://amazonaws-china.com/cn/s3/)、
-[UCloud对象存储（UFile）](https://www.ucloud.cn/site/product/ufile.html) 
+[UCloud对象存储（UFile）](https://www.ucloud.cn/site/product/ufile.html)、
+[华为云OBS](https://www.huaweicloud.com/product/obs.html) 
 
 # 使用方法(Docker)
 ### 运行
@@ -92,3 +93,4 @@ https://github.com/fengyhack/csharp-sdk
 https://github.com/sanjusss/ucloud-csharp-sdk  
 https://github.com/aws/aws-sdk-net/  
 https://github.com/awslabs/aws-sdk-net-samples  
+https://support.huaweicloud.com/devg-obs_csharp_sdk_doc_zh/zh-cn_topic_0120606335.html  

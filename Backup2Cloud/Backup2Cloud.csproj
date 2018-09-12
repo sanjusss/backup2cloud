@@ -5,9 +5,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <NeutralLanguage></NeutralLanguage>
-    <AssemblyVersion>0.0.4.2</AssemblyVersion>
-    <FileVersion>0.0.4.2</FileVersion>
-    <Version>0.0.4.2</Version>
+    <AssemblyVersion>0.0.5.1</AssemblyVersion>
+    <FileVersion>0.0.5.1</FileVersion>
+    <Version>0.0.5.1</Version>
     <Authors>sanjusss</Authors>
     <Company />
     <Description>定时将服务器上的文件备份到云存储。</Description>
@@ -22,6 +22,7 @@
     <PackageReference Include="AWSSDK.S3" Version="3.3.23.2" />
     <PackageReference Include="BceSdkDotNetCore" Version="1.0.2.911" />
     <PackageReference Include="CommandLineParser" Version="2.3.0" />
+    <PackageReference Include="HuaweiCloud.SDK.OBS" Version="3.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="QCloudSDK.COS" Version="1.0.0" />
     <PackageReference Include="Qiniu.Shared" Version="7.2.15" />
