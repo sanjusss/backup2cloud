@@ -18,9 +18,8 @@
 [腾讯云COS](https://cloud.tencent.com/product/cos)、
 [百度云BOS](https://cloud.baidu.com/product/bos.html)、
 [七牛云对象存储](https://www.qiniu.com/products/kodo)、
-~~[UCloud对象存储（UFile）](https://www.ucloud.cn/site/product/ufile.html)~~  
-
-注：UFile官方C# SDK上传时会提示Bucket不存在，暂时无解。如果有大牛可以写出相关代码，欢迎提交。
+~~[AWS S3](https://amazonaws-china.com/cn/s3/)~~、
+[UCloud对象存储（UFile）](https://www.ucloud.cn/site/product/ufile.html) 
 
 # 使用方法(Docker)
 ### 运行
@@ -91,3 +90,5 @@ https://www.quartz-scheduler.net
 https://github.com/sanjusss/backup2cloud  
 https://github.com/fengyhack/csharp-sdk  
 https://github.com/sanjusss/ucloud-csharp-sdk  
+https://github.com/aws/aws-sdk-net/  
+https://github.com/awslabs/aws-sdk-net-samples  

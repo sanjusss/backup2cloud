@@ -65,7 +65,24 @@
       "path": "data/some",
       "timeout": 200000,
       "deleteAfterDays": 5,
-      "Tips": "accessKey：七牛云AccessKey（可以在控制台查看）；secretKey：七牛云SecretKey（可以在控制台查看）；url：绝对路径，例如\"https://backup-123456.cos.ap-chengdu.myqcloud.com/test\"，bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒，可以不设置；deleteAfterDays：多少天后自动删除，可以不设置"
+      "Tips": "accessKey：七牛云AccessKey（可以在控制台查看）；secretKey：七牛云SecretKey（可以在控制台查看）；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒，可以不设置；deleteAfterDays：多少天后自动删除，可以不设置"
+    },
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+  },
+  {
+    "name": "上传到 ucloud",
+    "provider": "ucloud",
+    "path": "/data",
+    "crontab": [
+      "0,30 * * * * ?"
+    ],
+    "uploader": {
+      "publicKey": "publicKey",
+      "privateKey": "privateKey",
+      "bucket": "backup",
+      "bucketDomain": "backup.cn-sh2.ufileos.com",
+      "path": "data/some",
+      "Tips": "accessKey：UCloud 公钥（可以在控制台-产品服务-API 产品-API密钥 查看）；secretKey：UCloud 私钥（可以在控制台-产品服务-API 产品-API密钥 查看）；bucket：存储空间名；bucketDomain：存储空间域名 类似<bucketname>.cn-sh2.ufileos.com；path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件"
     },
     "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
   }

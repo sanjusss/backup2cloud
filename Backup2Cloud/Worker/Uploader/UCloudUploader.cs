@@ -28,6 +28,10 @@ namespace Backup2Cloud.Worker.Uploader
         /// </summary>
         public string bucket;
         /// <summary>
+        /// UCloud 存储空间域名
+        /// </summary>
+        public string bucketDomain;
+        /// <summary>
         /// 文件在存储空间下的路径，作为上传路径前缀。
         /// </summary>
         public string path;
@@ -41,8 +45,9 @@ namespace Backup2Cloud.Worker.Uploader
             {
                 return "accessKey：UCloud 公钥（可以在控制台-产品服务-API 产品-API密钥 查看）；" +
                     "secretKey：UCloud 私钥（可以在控制台-产品服务-API 产品-API密钥 查看）；" +
-                    "bucket：存储空间名" +
-                    "path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；";
+                    "bucket：存储空间名；" +
+                    "bucketDomain：存储空间域名 类似<bucketname>.cn-sh2.ufileos.com；" +
+                    "path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件";
             }
         }
 
@@ -57,6 +62,7 @@ namespace Backup2Cloud.Worker.Uploader
                 publicKey = "publicKey",
                 privateKey = "privateKey",
                 bucket = "backup",
+                bucketDomain = "backup.cn-sh2.ufileos.com",
                 path = "data/some"
             };
         }
@@ -69,7 +75,13 @@ namespace Backup2Cloud.Worker.Uploader
         /// <exception cref="Exception"/>
         public Task Upload(string file, string suffix)
         {
+            if (bucketDomain.StartsWith(bucket) == false)
+            {
+                throw new Exception(string.Format("Bucket\"{0}\"的BucketDomain不是\"{1}\"！", bucket, bucketDomain));
+            }
+
             UFile u = new UFile(publicKey, privateKey);
+            u.FileUrl = "http://{0}" + bucketDomain.Substring(bucket.Length);
             var res = u.PutFile(file, path + suffix, bucket);
             if (res.RetCode != 0)
             {
