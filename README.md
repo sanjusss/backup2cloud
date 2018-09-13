@@ -7,6 +7,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/issues)
 [![GitHub forks](https://img.shields.io/github/forks/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/network)
 [![GitHub stars](https://img.shields.io/github/stars/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/stargazers)
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/sanjusss/backup2cloud.svg)](#)
 [![GitHub license](https://img.shields.io/github/license/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/blob/master/LICENSE)
 
 # 用途
