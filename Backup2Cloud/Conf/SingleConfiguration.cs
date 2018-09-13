@@ -33,6 +33,18 @@ namespace Backup2Cloud.Conf
         public HashSet<string> crontab;
 
         /// <summary>
+        /// 打包备份文件夹或文件之前额外执行的命令。
+        /// 可以为空。
+        /// </summary>
+        public string command;
+
+        /// <summary>
+        /// 打包备份文件夹或文件之前额外执行的命令的参数。
+        /// 可以为空。
+        /// </summary>
+        public string commandArgs;
+
+        /// <summary>
         /// 上传设置
         /// </summary>
         public IUploader uploader;
@@ -48,6 +60,8 @@ namespace Backup2Cloud.Conf
                     "provider：上传服务提供商；" +
                     "path：需要备份的文件夹或文件在本地的路径；" +
                     "crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；" +
+                    "command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；" +
+                    "commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；" +
                     "uploader：上传设置";
             }
         }

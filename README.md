@@ -41,16 +41,6 @@ docker run --rm -v /D/share:/conf sanjusss/backup2cloud eg -s /conf/eg.json
 示例文件 [点我](https://github.com/sanjusss/backup2cloud/blob/master/example.json)  
 实际的配置文件中没有Tips一项。  
 
-### 查看命令帮助
-```
-docker run --rm sanjusss/backup2cloud --help
-```
-
-### 查看软件版本
-```
-docker run --rm sanjusss/backup2cloud --version
-```
-
 # 使用方法(Windows)
 ### 下载
 [点我打开软件下载页面](https://github.com/sanjusss/backup2cloud/releases/latest)  
@@ -70,15 +60,8 @@ backup2cloud eg -s D:\share\eg.json
 示例文件 [点我](https://github.com/sanjusss/backup2cloud/blob/master/example.json)  
 实际的配置文件中没有Tips一项。  
 
-### 查看命令帮助
-```
-backup2cloud --help
-```
-
-### 查看软件版本
-```
-backup2cloud --version
-```
+# 配置文件说明
+待补充
 
 # 引用项目
 https://www.newtonsoft.com/json  

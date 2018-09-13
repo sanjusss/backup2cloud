@@ -4,6 +4,7 @@ using Quartz;
 using SharpCompress.Archives;
 using SharpCompress.Common;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -26,15 +27,23 @@ namespace Backup2Cloud.Worker
                 try
                 {
                     DateTime start = DateTime.Now;
+                    Log.Info(string.Format("开始执行任务\"{0}\"。", conf.name), conf.name);
+
+                    RunCommand(conf);
+                    Log.Info("成功执行自定义命令。", conf.name);
+
                     string suffix = start.ToString("yyyyMMddHHmmss") + ".zip";
                     file = Compress(conf.path);
+                    Log.Info("成功打包备份文件。", conf.name);
                     await conf.uploader.Upload(file, suffix);
+                    Log.Info("成功上传文件。", conf.name);
+
                     DateTime end = DateTime.Now;
-                    Log.Info(string.Format("上传成功，用时{0}秒。", (end - start).TotalSeconds), conf.name);
+                    Log.Info(string.Format("任务\"{0}\"执行成功，用时{1}秒。", conf.name, (end - start).TotalSeconds), conf.name);
                 }
                 catch (Exception e)
                 {
-                    Log.Error(e.ToString(), conf.name);
+                    Log.Error(e.Message, conf.name);//此处只显示基本异常信息。
                 }
                 finally
                 {
@@ -48,6 +57,25 @@ namespace Backup2Cloud.Worker
             catch (Exception e)
             {
                 Log.Error(e.ToString());
+            }
+        }
+
+        private void RunCommand(SingleConfiguration conf)
+        {
+            if (string.IsNullOrWhiteSpace(conf.command) == false)
+            {
+                Process process = string.IsNullOrWhiteSpace(conf.commandArgs) ?
+                    Process.Start(conf.command) :
+                    Process.Start(conf.command, conf.commandArgs);
+#if DEBUG
+                process.OutputDataReceived += (sender, e) => Log.Info(e.Data, conf.name);
+                process.BeginOutputReadLine();
+#endif
+                process.WaitForExit();
+                if (process.ExitCode == 0)
+                {
+                    throw new Exception(string.Format("自定义命令返回了错误码 {0}。", process.ExitCode));
+                }
             }
         }
 

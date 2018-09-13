@@ -25,7 +25,9 @@ namespace Backup2Cloud.Conf
                     uploader = (Activator.CreateInstance(i.Value) as IUploader).GetExample(),
                     name = "上传到 " + i.Key,
                     path = "/data",
-                    crontab = new HashSet<string>(crontab)
+                    crontab = new HashSet<string>(crontab),
+                    command = "echo",
+                    commandArgs = "Hello World!"
                 };
 
                 configurations.Add(single);
