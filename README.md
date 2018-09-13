@@ -1,14 +1,13 @@
 ﻿
-[![Docker Automated build](https://img.shields.io/docker/automated/sanjusss/backup2cloud.svg)](https://hub.docker.com/r/sanjusss/backup2cloud)
 [![Docker Build Status](https://img.shields.io/docker/build/sanjusss/backup2cloud.svg)](https://hub.docker.com/r/sanjusss/backup2cloud)
 [![Build status](https://ci.appveyor.com/api/projects/status/9sa1mtm53jxket5t?svg=true)](https://ci.appveyor.com/project/sanjusss/backup2cloud)
-[![GitHub release](https://img.shields.io/github/release/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/releases)  
+[![GitHub release](https://img.shields.io/github/release/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/releases/latest)
+[![GitHub license](https://img.shields.io/github/license/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/blob/master/LICENSE)  
 [![GitHub tag](https://img.shields.io/github/tag/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/tags)
 [![GitHub issues](https://img.shields.io/github/issues/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/issues)
 [![GitHub forks](https://img.shields.io/github/forks/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/network)
 [![GitHub stars](https://img.shields.io/github/stars/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/stargazers)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/sanjusss/backup2cloud.svg)](#)
-[![GitHub license](https://img.shields.io/github/license/sanjusss/backup2cloud.svg)](https://github.com/sanjusss/backup2cloud/blob/master/LICENSE)
 
 # 用途
 定时将服务器上的文件或文件夹备份到网络云存储（OSS或S3）。  
