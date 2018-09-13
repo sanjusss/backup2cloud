@@ -72,12 +72,19 @@ namespace Backup2Cloud.Worker
 
             if (File.Exists(path))
             {
-                FileInfo fi = new FileInfo(path);
                 // 是文件
-                using (var archive = SharpCompress.Archives.Zip.ZipArchive.Create())
+                FileInfo fi = new FileInfo(path);
+                if (fi.FullName.EndsWith(".zip"))//如果是zip文件，就直接复制，而不是压缩。
                 {
-                    archive.AddEntry(fi.Name, fi);
-                    archive.SaveTo(zip, CompressionType.Deflate);
+                    fi.CopyTo(zip, true);
+                }
+                else
+                {
+                    using (var archive = SharpCompress.Archives.Zip.ZipArchive.Create())
+                    {
+                        archive.AddEntry(fi.Name, fi);
+                        archive.SaveTo(zip, CompressionType.Deflate);
+                    }
                 }
             }
             else if (Directory.Exists(path))
