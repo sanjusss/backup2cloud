@@ -6,6 +6,8 @@
     "crontab": [
       "0,30 * * * * ?"
     ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
     "uploader": {
       "endpoint": "oss-cn-hangzhou.aliyuncs.com",
       "id": "阿里云AccessKeyId",
@@ -15,7 +17,7 @@
       "timeout": 200000,
       "Tips": "endpoint：地域节点（可以在控制台查看）；id：阿里云AccessKeyId（可以在控制台查看）；secret：阿里云AccessKeySecret（可以在控制台查看）；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒，可以不设置"
     },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
   },
   {
     "name": "上传到 aws",
@@ -24,6 +26,8 @@
     "crontab": [
       "0,30 * * * * ?"
     ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
     "uploader": {
       "regionSystemName": "us-west-1",
       "awsAccessKeyId": "xxxx",
@@ -32,7 +36,7 @@
       "path": "data/file",
       "Tips": "regionSystemName：区域的系统名，例如 us-west-1awsAccessKeyId：AWS Access Key ID；awsSecretAccessKey：AWS Secret Access Key；bucket：Bucket/桶；path：文件在Bucket/桶下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件"
     },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
   },
   {
     "name": "上传到 baidu",
@@ -41,6 +45,8 @@
     "crontab": [
       "0,30 * * * * ?"
     ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
     "uploader": {
       "endpoint": "https://su.bcebos.com",
       "id": "百度云AccessKeyId",
@@ -50,7 +56,7 @@
       "timeout": 200000,
       "Tips": "endpoint：地域节点北京区域：https://bj.bcebos.com ，广州区域：https://gz.bcebos.com， 苏州区域：https://su.bcebos.com （可以在控制台查看）；id：百度云AccessKeyId（可以在控制台查看）；secret：百度云SecretAccessKey（可以在控制台查看）；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒"
     },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
   },
   {
     "name": "上传到 huawei",
@@ -59,6 +65,8 @@
     "crontab": [
       "0,30 * * * * ?"
     ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
     "uploader": {
       "endpoint": "obs.cn-north-1.myhwclouds.com",
       "accessKeyId": "xxxx",
@@ -68,7 +76,7 @@
       "deleteAfterDays": 20,
       "Tips": "endpoint：地域节点（可以在控制台查看）；accessKeyId：华为云 Access Key Id（可以在控制台查看）；secretAccessKey：华为云 Secret Access Key（可以在控制台查看）；bucket：桶名称path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；deleteAfterDays：多少天后自动删除，可以不设置"
     },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
   },
   {
     "name": "上传到 JDCloud",
@@ -77,6 +85,8 @@
     "crontab": [
       "0,30 * * * * ?"
     ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
     "uploader": {
       "domain": "backup.oss.cn-east-2.jcloudcs.com",
       "accessKeyId": "xxxx",
@@ -84,7 +94,7 @@
       "path": "data/file",
       "Tips": "domain：对象存储空间的外网访问域名，在 对象存储-空间管理-空间信息 里查看，例如backup.oss.cn-east-2.jcloudcs.comaccessKeyId：Access Key ID；secretAccessKey：Secret Access Key；path：文件在Bucket/桶下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件"
     },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
   },
   {
     "name": "上传到 qcloud",
@@ -93,6 +103,8 @@
     "crontab": [
       "0,30 * * * * ?"
     ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
     "uploader": {
       "appId": "123456",
       "secretId": "xxxx",
@@ -100,7 +112,25 @@
       "url": "https://backup-123456.cos.ap-chengdu.myqcloud.com/test",
       "Tips": "appId：腾讯云 APPID（可以在控制台查看）；secretId：腾讯云 SecretId（可以在控制台查看）；secretKey：腾讯云 SecretKey（可以在控制台查看）；url：绝对路径，例如\"https://backup-123456.cos.ap-chengdu.myqcloud.com/test\"，最终会生成类似\"https://backup-123456.cos.ap-chengdu.myqcloud.com/test201809092054.zip\"之类的文件，可以在 控制台-对象存储-存储桶列表-点击实际的桶名称-基础设置-访问域名 中找到url的前部分，后部分是文件相对于桶的路径"
     },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
+  },
+  {
+    "name": "上传到 qinstor",
+    "provider": "qinstor",
+    "path": "/data",
+    "crontab": [
+      "0,30 * * * * ?"
+    ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
+    "uploader": {
+      "url": "http://backup.pek3b.qingstor.com",
+      "accessKeyId": "xxxx",
+      "secretAccessKey": "yyy",
+      "path": "data/file",
+      "Tips": "url：Url (API访问用)，在 对象存储 里查看，例如 http://backup.pek3b.qingstor.comaccessKeyId：Access Key ID；secretAccessKey：Secret Access Key；path：文件在Bucket/桶下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件"
+    },
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
   },
   {
     "name": "上传到 qiniu",
@@ -109,6 +139,8 @@
     "crontab": [
       "0,30 * * * * ?"
     ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
     "uploader": {
       "accessKey": "accessKey",
       "secretKey": "secretKey",
@@ -118,7 +150,7 @@
       "deleteAfterDays": 5,
       "Tips": "accessKey：七牛云AccessKey（可以在控制台查看）；secretKey：七牛云SecretKey（可以在控制台查看）；bucket：存储空间名path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件；timeout：上传超时时间，单位毫秒，可以不设置；deleteAfterDays：多少天后自动删除，可以不设置"
     },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
   },
   {
     "name": "上传到 ucloud",
@@ -127,6 +159,8 @@
     "crontab": [
       "0,30 * * * * ?"
     ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
     "uploader": {
       "publicKey": "publicKey",
       "privateKey": "privateKey",
@@ -135,6 +169,6 @@
       "path": "data/some",
       "Tips": "accessKey：UCloud 公钥（可以在控制台-产品服务-API 产品-API密钥 查看）；secretKey：UCloud 私钥（可以在控制台-产品服务-API 产品-API密钥 查看）；bucket：存储空间名；bucketDomain：存储空间域名 类似<bucketname>.cn-sh2.ufileos.com；path：文件在存储空间下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件"
     },
-    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；uploader：上传设置"
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
   }
 ]
