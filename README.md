@@ -15,7 +15,7 @@
 
 # 支持的云存储
 
-|服务提供商|产品名称|是否支持|
+|服务提供商|产品名称|是否支持|备注|
 |-|-|-|
 |[阿里云](https://www.aliyun.com)|[OSS](https://www.aliyun.com/product/oss)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
 |[腾讯云](https://cloud.tencent.com)|[COS](https://cloud.tencent.com/product/cos)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
@@ -26,7 +26,7 @@
 |[华为云](https://www.huaweicloud.com)|[OBS](https://www.huaweicloud.com/product/obs.html)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
 |[京东云](https://www.jdcloud.com)|[对象存储](https://www.jdcloud.com/products/cloudstorag)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
 |[青云](https://www.qingcloud.com)|[对象存储](https://www.qingcloud.com/products/qingstor/)|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
-|[金山云](https://www.ksyun.com)|[对象存储](https://www.ksyun.com/post/product/KS3)|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|[金山云](https://www.ksyun.com)|[对象存储](https://www.ksyun.com/post/product/KS3)|![不支持](https://img.shields.io/badge/support-No-red.svg)|仅限企业用户|
 |[Azure](https://www.azure.cn/zh-cn/)|[Blob 存储](https://www.azure.cn/zh-cn/home/features/storage/blobs/)|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
 |[Google Cloud](https://cloud.google.com)|[Google Cloud Storage](https://cloud.google.com/storage/)|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
 
