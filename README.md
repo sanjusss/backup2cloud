@@ -14,14 +14,42 @@
 可以设置在多个时间点，备份多个文件或文件夹到多个网络云存储。  
 
 # 支持的云存储
-[阿里云OSS](https://www.aliyun.com/product/oss)、
-[腾讯云COS](https://cloud.tencent.com/product/cos)、
-[百度云BOS](https://cloud.baidu.com/product/bos.html)、
-[七牛云对象存储](https://www.qiniu.com/products/kodo)、
-[AWS S3](https://amazonaws-china.com/cn/s3/)、
-[UCloud对象存储（UFile）](https://www.ucloud.cn/site/product/ufile.html)、
-[华为云OBS](https://www.huaweicloud.com/product/obs.html)、
-[京东云](https://www.jdcloud.com/products/cloudstorag)
+
+|服务提供商|产品名称|是否支持|
+|-|-|-|
+|[阿里云](https://www.aliyun.com)|[OSS](https://www.aliyun.com/product/oss)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|[腾讯云](https://cloud.tencent.com)|[COS](https://cloud.tencent.com/product/cos)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|[百度云](https://cloud.baidu.com)|[BOS](https://cloud.baidu.com/product/bos.html)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|[七牛云](https://www.qiniu.com)|[对象存储](https://www.qiniu.com/products/kodo)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|[AWS](https://amazonaws-china.com/cn/)|[S3](https://amazonaws-china.com/cn/s3/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|[UCloud](https://www.ucloud.cn)|[UFile](https://www.ucloud.cn/site/product/ufile.html)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|[华为云](https://www.huaweicloud.com)|[OBS](https://www.huaweicloud.com/product/obs.html)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|[京东云](https://www.jdcloud.com)|[对象存储](https://www.jdcloud.com/products/cloudstorag)|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|[青云](https://www.qingcloud.com)|[对象存储](https://www.qingcloud.com/products/qingstor/)|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|[金山云](https://www.ksyun.com)|[对象存储](https://www.ksyun.com/post/product/KS3)|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|[Azure](https://www.azure.cn/zh-cn/)|[Blob 存储](https://www.azure.cn/zh-cn/home/features/storage/blobs/)|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|[Google Cloud](https://cloud.google.com)|[Google Cloud Storage](https://cloud.google.com/storage/)|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+
+# 支持的数据源
+
+|数据源|是否支持|
+|-|-|
+|本地文件|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|本地文件夹|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|远程文件|![不支持](https://img.shields.io/badge/support-No-red.svg)|
+|远程文件夹|![不支持](https://img.shields.io/badge/support-No-red.svg)|
+|MySQL|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|SQL Server|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|Oracle|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|自定义命令|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+
+# 支持的备份触发方式
+
+|触发方式|是否支持|
+|-|-|
+|Cron 表达式|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|本地文件发生变化|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|本地文件夹发生变化|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
 
 # 使用方法(Docker)
 ### 运行
