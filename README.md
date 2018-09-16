@@ -104,3 +104,5 @@ https://github.com/sanjusss/ucloud-csharp-sdk
 https://github.com/aws/aws-sdk-net/  
 https://github.com/awslabs/aws-sdk-net-samples  
 https://support.huaweicloud.com/devg-obs_csharp_sdk_doc_zh/zh-cn_topic_0120606335.html  
+https://github.com/GoogleCloudPlatform/google-cloud-dotnet  
+https://github.com/Azure/azure-storage-net  
