@@ -27,7 +27,7 @@
 |[京东云](https://www.jdcloud.com)|[对象存储](https://www.jdcloud.com/products/cloudstorag)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||
 |[青云](https://www.qingcloud.com)|[对象存储](https://www.qingcloud.com/products/qingstor/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||
 |[金山云](https://www.ksyun.com)|[对象存储](https://www.ksyun.com/post/product/KS3)|![不支持](https://img.shields.io/badge/support-No-red.svg)|仅限企业用户|
-|[Azure](https://www.azure.cn/zh-cn/)|[Blob 存储](https://www.azure.cn/zh-cn/home/features/storage/blobs/)|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)||
+|[Azure](https://www.azure.cn/zh-cn/)|[Blob 存储](https://www.azure.cn/zh-cn/home/features/storage/blobs/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||
 |[Google Cloud](https://cloud.google.com)|[Google Cloud Storage](https://cloud.google.com/storage/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||
 
 # 支持的数据源
