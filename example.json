@@ -59,6 +59,23 @@
     "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
   },
   {
+    "name": "上传到 google",
+    "provider": "google",
+    "path": "/data",
+    "crontab": [
+      "0,30 * * * * ?"
+    ],
+    "command": "echo",
+    "commandArgs": "Hello World!",
+    "uploader": {
+      "jsonKeyFile": "/conf/xxx.json",
+      "bucket": "backup",
+      "path": "data/some",
+      "Tips": "jsonKeyFile：服务账号密钥文件位置bucket：存储空间名；path：文件在Bucket/桶下的路径前缀，例如\"data/some\"，最终会生成类似\"data/some201809092054.zip\"之类的文件"
+    },
+    "Tips": "name：任务名称；provider：上传服务提供商；path：需要备份的文件夹或文件在本地的路径；crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；uploader：上传设置"
+  },
+  {
     "name": "上传到 huawei",
     "provider": "huawei",
     "path": "/data",
