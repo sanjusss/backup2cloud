@@ -28,7 +28,8 @@
 |[青云](https://www.qingcloud.com)|[对象存储](https://www.qingcloud.com/products/qingstor/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||
 |[金山云](https://www.ksyun.com)|[对象存储](https://www.ksyun.com/post/product/KS3)|![不支持](https://img.shields.io/badge/support-No-red.svg)|仅限企业用户|
 |[Azure](https://www.azure.cn/zh-cn/)|[Blob 存储](https://www.azure.cn/zh-cn/home/features/storage/blobs/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||
-|[Google Cloud](https://cloud.google.com)|[Google Cloud Storage](https://cloud.google.com/storage/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||
+|[Google Cloud](https://cloud.google.com)|[Google Cloud Storage](https://cloud.google.com/storage/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||  
+||FTP|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)||  
 
 # 支持的数据源
 
@@ -36,12 +37,12 @@
 |-|-|
 |本地文件|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
 |本地文件夹|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
-|远程文件|![不支持](https://img.shields.io/badge/support-No-red.svg)|
-|远程文件夹|![不支持](https://img.shields.io/badge/support-No-red.svg)|
 |MySQL|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
 |SQL Server|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
 |Oracle|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
 |自定义命令|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|FTP文件|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|FTP文件文件夹|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
 
 # 支持的备份触发方式
 
