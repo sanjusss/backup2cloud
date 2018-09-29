@@ -16,6 +16,10 @@ namespace Backup2Cloud.Worker
     public class UCloudUploader : IUploader
     {
         /// <summary>
+        /// 服务商名称
+        /// </summary>
+        public string Name => "ucloud";
+        /// <summary>
         /// UCloud 公钥
         /// </summary>
         public string publicKey;

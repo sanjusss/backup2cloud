@@ -16,6 +16,10 @@ namespace Backup2Cloud.Worker
     public class AwsUploader : IUploader
     {
         /// <summary>
+        /// 服务商名称
+        /// </summary>
+        public string Name => "aws";
+        /// <summary>
         /// 区域的系统名
         /// </summary>
         public string regionSystemName;

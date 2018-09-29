@@ -16,13 +16,13 @@ namespace Backup2Cloud.Conf
         /// 所有支持的uploader类型。
         /// key表示上传服务提供商。
         /// </summary>
-        private readonly Dictionary<string, Type> supportTypes = null;
+        private readonly Dictionary<string, Type> supportUploaderTypes = null;
         /// <summary>
         /// 初始化
         /// </summary>
         public ConfigurationConverter()
         {
-            supportTypes = UploaderLoader.Load();
+            supportUploaderTypes = UploaderLoader.Load();
         }
 
         /// <summary>
@@ -55,16 +55,17 @@ namespace Backup2Cloud.Conf
             SingleConfiguration target = new SingleConfiguration()
             {
                 name = jsonObject["name"].ToString(),
-                provider = jsonObject["provider"].ToString(),
                 path = jsonObject["path"].ToString(),
                 crontab = jsonObject["crontab"].ToObject<HashSet<string>>()
             };
-            if (supportTypes.ContainsKey(target.provider) == false)
+            var uploader = jsonObject["uploader"];
+            string uploaderName = uploader["name"].ToString();
+            if (supportUploaderTypes.ContainsKey(uploaderName) == false)
             {
-                throw new ArgumentOutOfRangeException(string.Format("没有找到\"{0}\"的上传实现。", target.provider));
+                throw new ArgumentOutOfRangeException(string.Format("没有找到\"{0}\"的上传实现。", uploaderName));
             }
 
-            target.uploader = jsonObject["uploader"].ToObject(supportTypes[target.provider]) as IUploader;
+            target.uploader = jsonObject["uploader"].ToObject(supportUploaderTypes[uploaderName]) as IUploader;
             return target;
         }
 

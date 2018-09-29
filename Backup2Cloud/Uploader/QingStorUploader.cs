@@ -17,6 +17,10 @@ namespace Backup2Cloud.Worker
     public class QingStorUploader : IUploader
     {
         /// <summary>
+        /// 服务商名称
+        /// </summary>
+        public string Name => "qinstor";
+        /// <summary>
         /// 对象存储空间的外网访问域名
         /// </summary>
         public string url;

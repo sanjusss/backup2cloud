@@ -1,4 +1,5 @@
 ﻿using Backup2Cloud.Conf;
+using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 
@@ -9,6 +10,12 @@ namespace Backup2Cloud.Worker
     /// </summary>
     public interface IUploader : IConfigurable
     {
+        /// <summary>
+        /// 服务商名称，应该与ProviderNameAttribute相同。
+        /// </summary>
+        [JsonProperty("name")]
+        string Name { get; }
+
         /// <summary>
         /// 上传文件。
         /// </summary>

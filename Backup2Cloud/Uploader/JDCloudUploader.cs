@@ -12,9 +12,13 @@ namespace Backup2Cloud.Worker
     /// <summary>
     /// 京东云对象存储上传实现类。
     /// </summary>
-    [ProviderName("JDCloud")]
+    [ProviderName("jdcloud")]
     public class JDCloudUploader : IUploader
     {
+        /// <summary>
+        /// 服务商名称
+        /// </summary>
+        public string Name => "jdcloud";
         /// <summary>
         /// 对象存储空间的外网访问域名
         /// </summary>

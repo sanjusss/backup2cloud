@@ -14,6 +14,10 @@ namespace Backup2Cloud.Worker
     public class AzureBlobUploader : IUploader
     {
         /// <summary>
+        /// 服务商名称
+        /// </summary>
+        public string Name => "azure";
+        /// <summary>
         /// 连接字符串
         /// </summary>
         public string connectionString;

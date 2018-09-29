@@ -16,6 +16,10 @@ namespace Backup2Cloud.Worker
     public class BaiduUploader : IUploader
     {
         /// <summary>
+        /// 服务商名称
+        /// </summary>
+        public string Name => "baidu";
+        /// <summary>
         /// 访问域名（可以在控制台查看）
         /// </summary>
         public string endpoint;

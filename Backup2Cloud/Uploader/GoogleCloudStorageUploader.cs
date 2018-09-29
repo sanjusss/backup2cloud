@@ -15,6 +15,10 @@ namespace Backup2Cloud.Worker
     public class GoogleCloudStorageUploader : IUploader
     {
         /// <summary>
+        /// 服务商名称
+        /// </summary>
+        public string Name => "google";
+        /// <summary>
         /// 服务账号密钥文件位置
         /// </summary>
         public string jsonKeyFile;

@@ -14,11 +14,6 @@ namespace Backup2Cloud.Conf
         public string name;
 
         /// <summary>
-        /// 服务商
-        /// </summary>
-        public string provider;
-
-        /// <summary>
         /// 需要备份的文件夹或文件路径
         /// </summary>
         public string path;
@@ -53,7 +48,6 @@ namespace Backup2Cloud.Conf
             get
             {
                 return "name：任务名称；" +
-                    "provider：上传服务提供商；" +
                     "path：需要备份的文件夹或文件在本地的路径；" +
                     "crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；" +
                     "command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；" +

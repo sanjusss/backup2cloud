@@ -9,8 +9,15 @@ using System.Text;
 
 namespace Backup2Cloud.Conf
 {
+    /// <summary>
+    /// 示例打印类。
+    /// </summary>
     public class ExamplePrinter
     {
+        /// <summary>
+        /// 根据命令行参数打印示例。
+        /// </summary>
+        /// <param name="options">命令行参数</param>
         public static void Print(ExampleOptions options)
         {
             var uploaders = UploaderLoader.Load();
@@ -20,7 +27,6 @@ namespace Backup2Cloud.Conf
             {
                 SingleConfiguration single = new SingleConfiguration()
                 {
-                    provider = i.Key,
                     uploader = (Activator.CreateInstance(i.Value) as IUploader).GetExample(),
                     name = "上传到 " + i.Key,
                     path = "/data",
@@ -37,6 +43,7 @@ namespace Backup2Cloud.Conf
             Console.WriteLine(json);
             if (string.IsNullOrEmpty(options.Path) == false)
             {
+                //保存到文件。
                 using (StreamWriter stream = new StreamWriter(options.Path, false, Encoding.UTF8))
                 {
                     stream.Write(json);

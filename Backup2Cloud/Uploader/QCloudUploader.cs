@@ -14,6 +14,10 @@ namespace Backup2Cloud.Worker
     public class QCloudUploader : IUploader
     {
         /// <summary>
+        /// 服务商名称
+        /// </summary>
+        public string Name => "qcloud";
+        /// <summary>
         /// 腾讯云 APPID
         /// </summary>
         public string appId;

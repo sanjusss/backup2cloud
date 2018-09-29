@@ -13,6 +13,10 @@ namespace Backup2Cloud.Worker
     public class QiniuUploader : IUploader
     {
         /// <summary>
+        /// 服务商名称
+        /// </summary>
+        public string Name => "qiniu";
+        /// <summary>
         /// 七牛云AccessKey
         /// </summary>
         public string accessKey;
