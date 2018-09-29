@@ -4,7 +4,7 @@ using Qiniu.Util;
 using System;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker.Uploader
+namespace Backup2Cloud.Worker
 {
     /// <summary>
     /// 七牛云对象存储上传实现类。

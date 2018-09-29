@@ -6,7 +6,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker.Uploader
+namespace Backup2Cloud.Worker
 {
     /// <summary>
     /// 谷歌云存储上传实现类

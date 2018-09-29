@@ -7,7 +7,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker.Uploader
+namespace Backup2Cloud.Worker
 {
     /// <summary>
     /// AWS S3上传实现类。

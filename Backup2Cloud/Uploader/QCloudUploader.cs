@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker.Uploader
+namespace Backup2Cloud.Worker
 {
     /// <summary>
     /// 腾讯云COS上传实现类。

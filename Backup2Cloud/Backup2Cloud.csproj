@@ -5,9 +5,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <NeutralLanguage></NeutralLanguage>
-    <AssemblyVersion>0.0.8.0</AssemblyVersion>
-    <FileVersion>0.0.8.0</FileVersion>
-    <Version>0.0.8</Version>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
+    <Version>0.1.0</Version>
     <Authors>sanjusss</Authors>
     <Company />
     <Description>定时将服务器上的文件备份到云存储。</Description>
@@ -31,6 +31,10 @@
     <PackageReference Include="SharpCompress" Version="0.22.0" />
     <PackageReference Include="UCloudSDK.NetCore" Version="1.0.11" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataSource\" />
   </ItemGroup>
 
 </Project>

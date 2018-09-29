@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using UCloudSDK;
 using UCloudSDK.Models;
 
-namespace Backup2Cloud.Worker.Uploader
+namespace Backup2Cloud.Worker
 {
     /// <summary>
     /// UCloud对象存储上传实现类。
