@@ -1,13 +1,15 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Backup2Cloud.Conf;
 
 namespace Backup2Cloud.DataSource
 {
-    public interface IDataSource
+    /// <summary>
+    /// 数据源接口，实现此接口需要同时引用NameAttribute表明数据源类型。
+    /// </summary>
+    public interface IDataSource : IConfigurable, IExampled
     {
-        [JsonProperty("name")]
-        string Name { get; set; }
+        /// <summary>
+        /// 保存数据。
+        /// </summary>
+        void SaveData();
     }
 }

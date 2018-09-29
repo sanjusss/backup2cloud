@@ -1,22 +1,17 @@
-﻿using OBS;
+﻿using Backup2Cloud.Conf;
+using OBS;
 using OBS.Model;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Uploader
 {
     /// <summary>
     /// 华为云上传实现类。
     /// </summary>
-    [ProviderName("huawei")]
+    [Name("huawei")]
     public class HuaweiCloudUploader : IUploader
     {
-        /// <summary>
-        /// 服务商名称
-        /// </summary>
-        public string Name => "huawei";
         /// <summary>
         /// 访问域名（可以在控制台查看）
         /// </summary>
@@ -61,7 +56,7 @@ namespace Backup2Cloud.Worker
         /// 获取华为云示例实例。
         /// </summary>
         /// <returns>华为云示例配置实例</returns>
-        public IUploader GetExample()
+        public object GetExample()
         {
             return new HuaweiCloudUploader()
             {

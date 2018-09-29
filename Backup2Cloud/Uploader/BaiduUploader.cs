@@ -1,24 +1,19 @@
-﻿using BaiduBce;
+﻿using Backup2Cloud.Conf;
+using BaiduBce;
 using BaiduBce.Auth;
 using BaiduBce.Services.Bos;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Uploader
 {
     /// <summary>
     /// 百度云上传实现类。
     /// </summary>
-    [ProviderName("baidu")]
+    [Name("baidu")]
     public class BaiduUploader : IUploader
     {
-        /// <summary>
-        /// 服务商名称
-        /// </summary>
-        public string Name => "baidu";
         /// <summary>
         /// 访问域名（可以在控制台查看）
         /// </summary>
@@ -62,7 +57,7 @@ namespace Backup2Cloud.Worker
         /// 获取百度云示例实例。
         /// </summary>
         /// <returns>百度云示例配置实例</returns>
-        public IUploader GetExample()
+        public object GetExample()
         {
             return new BaiduUploader()
             {

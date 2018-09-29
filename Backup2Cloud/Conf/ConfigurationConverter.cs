@@ -1,4 +1,5 @@
-﻿using Backup2Cloud.Worker;
+﻿using Backup2Cloud.DataSource;
+using Backup2Cloud.Uploader;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -13,16 +14,22 @@ namespace Backup2Cloud.Conf
     public class ConfigurationConverter : JsonConverter
     {
         /// <summary>
+        /// 所有支持的dataSource类型。
+        /// key表示上传服务提供商。
+        /// </summary>
+        private readonly Dictionary<string, Type> _supportDataSourceTypes = null;
+        /// <summary>
         /// 所有支持的uploader类型。
         /// key表示上传服务提供商。
         /// </summary>
-        private readonly Dictionary<string, Type> supportUploaderTypes = null;
+        private readonly Dictionary<string, Type> _supportUploaderTypes = null;
         /// <summary>
         /// 初始化
         /// </summary>
         public ConfigurationConverter()
         {
-            supportUploaderTypes = UploaderLoader.Load();
+            _supportDataSourceTypes = NamedInterfaceLoader.Load(typeof(IDataSource));
+            _supportUploaderTypes = NamedInterfaceLoader.Load(typeof(IUploader));
         }
 
         /// <summary>
@@ -48,7 +55,7 @@ namespace Backup2Cloud.Conf
         /// <param name="existingValue">已存在的值</param>
         /// <param name="serializer">序列化生成器</param>
         /// <returns>SingleConfiguration实例</returns>
-        /// <exception cref="ArgumentOutOfRangeException"/>
+        /// <exception cref="InvalidCastException"/>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var jsonObject = JObject.Load(reader);
@@ -58,14 +65,32 @@ namespace Backup2Cloud.Conf
                 path = jsonObject["path"].ToString(),
                 crontab = jsonObject["crontab"].ToObject<HashSet<string>>()
             };
-            var uploader = jsonObject["uploader"];
-            string uploaderName = uploader["name"].ToString();
-            if (supportUploaderTypes.ContainsKey(uploaderName) == false)
+            
+            var dataSource = jsonObject["dataSource"];
+            if (dataSource.Type != JTokenType.Null)
             {
-                throw new ArgumentOutOfRangeException(string.Format("没有找到\"{0}\"的上传实现。", uploaderName));
+                string dsName = dataSource["name"].ToString();
+                if (_supportDataSourceTypes.ContainsKey(dsName))
+                {
+                    target.dataSource = jsonObject["dataSource"].ToObject(_supportDataSourceTypes[dsName]) as IDataSource;
+                }
+                else
+                {
+                    throw new InvalidCastException(string.Format("没有找到\"{0}\"的数据源实现。", dsName));
+                }
             }
 
-            target.uploader = jsonObject["uploader"].ToObject(supportUploaderTypes[uploaderName]) as IUploader;
+            var uploader = jsonObject["uploader"];
+            string uploaderName = uploader["name"].ToString();
+            if (_supportUploaderTypes.ContainsKey(uploaderName))
+            {
+                target.uploader = jsonObject["uploader"].ToObject(_supportUploaderTypes[uploaderName]) as IUploader;
+            }
+            else
+            {
+                throw new InvalidCastException(string.Format("没有找到\"{0}\"的上传实现。", uploaderName));
+            }
+
             return target;
         }
 

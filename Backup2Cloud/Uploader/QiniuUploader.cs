@@ -1,21 +1,18 @@
-﻿using Qiniu.IO;
+﻿using Backup2Cloud.Conf;
+using Qiniu.IO;
 using Qiniu.IO.Model;
 using Qiniu.Util;
 using System;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Uploader
 {
     /// <summary>
     /// 七牛云对象存储上传实现类。
     /// </summary>
-    [ProviderName("qiniu")]
+    [Name("qiniu")]
     public class QiniuUploader : IUploader
     {
-        /// <summary>
-        /// 服务商名称
-        /// </summary>
-        public string Name => "qiniu";
         /// <summary>
         /// 七牛云AccessKey
         /// </summary>
@@ -61,7 +58,7 @@ namespace Backup2Cloud.Worker
         /// 获取七牛云示例实例。
         /// </summary>
         /// <returns>七牛云示例配置实例</returns>
-        public IUploader GetExample()
+        public object GetExample()
         {
             return new QiniuUploader()
             {

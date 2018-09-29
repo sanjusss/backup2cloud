@@ -1,22 +1,17 @@
-﻿using QCloudSDK.COS;
+﻿using Backup2Cloud.Conf;
+using QCloudSDK.COS;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Uploader
 {
     /// <summary>
     /// 腾讯云COS上传实现类。
     /// </summary>
-    [ProviderName("qcloud")]
+    [Name("qcloud")]
     public class QCloudUploader : IUploader
     {
-        /// <summary>
-        /// 服务商名称
-        /// </summary>
-        public string Name => "qcloud";
         /// <summary>
         /// 腾讯云 APPID
         /// </summary>
@@ -53,7 +48,7 @@ namespace Backup2Cloud.Worker
         /// 获取腾讯云示例实例。
         /// </summary>
         /// <returns>腾讯云示例配置实例</returns>
-        public IUploader GetExample()
+        public object GetExample()
         {
             return new QCloudUploader()
             {

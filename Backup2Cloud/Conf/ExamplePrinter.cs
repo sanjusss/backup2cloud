@@ -1,6 +1,6 @@
 ﻿using Backup2Cloud.Args;
 using Backup2Cloud.Logging;
-using Backup2Cloud.Worker;
+using Backup2Cloud.Uploader;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -20,25 +20,23 @@ namespace Backup2Cloud.Conf
         /// <param name="options">命令行参数</param>
         public static void Print(ExampleOptions options)
         {
-            var uploaders = UploaderLoader.Load();
+            var uploaders = NamedInterfaceLoader.Load(typeof(IUploader));
             List<SingleConfiguration> configurations = new List<SingleConfiguration>();
             string[] crontab = { "0,30 * * * * ?" };
             foreach (var i in uploaders)
             {
                 SingleConfiguration single = new SingleConfiguration()
                 {
-                    uploader = (Activator.CreateInstance(i.Value) as IUploader).GetExample(),
+                    uploader = (Activator.CreateInstance(i.Value) as IUploader).GetExample() as IUploader,
                     name = "上传到 " + i.Key,
                     path = "/data",
-                    crontab = new HashSet<string>(crontab),
-                    command = "echo",
-                    commandArgs = "Hello World!"
+                    crontab = new HashSet<string>(crontab)
                 };
 
                 configurations.Add(single);
             }
 
-            string json = JsonConvert.SerializeObject(configurations, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(configurations, Formatting.Indented, new NameConverter());
             Log.Info("\n\n示例文件：\n");
             Console.WriteLine(json);
             if (string.IsNullOrEmpty(options.Path) == false)

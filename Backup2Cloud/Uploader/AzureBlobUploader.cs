@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Backup2Cloud.Conf;
 using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Blob;
+using System;
+using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Uploader
 {
     /// <summary>
     /// Azure Blob上传实现类。
     /// </summary>
-    [ProviderName("azure")]
+    [Name("azure")]
     public class AzureBlobUploader : IUploader
     {
-        /// <summary>
-        /// 服务商名称
-        /// </summary>
-        public string Name => "azure";
         /// <summary>
         /// 连接字符串
         /// </summary>
@@ -46,7 +40,7 @@ namespace Backup2Cloud.Worker
         /// 获取示例实例。
         /// </summary>
         /// <returns>示例配置实例</returns>
-        public IUploader GetExample()
+        public object GetExample()
         {
             return new AzureBlobUploader()
             {

@@ -1,20 +1,17 @@
 ﻿using Aliyun.OSS;
 using Aliyun.OSS.Common;
+using Backup2Cloud.Conf;
 using System;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Uploader
 {
     /// <summary>
     /// 阿里云上传实现类。
     /// </summary>
-    [ProviderName("aliyun")]
+    [Name("aliyun")]
     public class AliyunUploader : IUploader
     {
-        /// <summary>
-        /// 服务商名称
-        /// </summary>
-        public string Name => "aliyun";
         /// <summary>
         /// 访问域名（可以在控制台查看）
         /// </summary>
@@ -59,7 +56,7 @@ namespace Backup2Cloud.Worker
         /// 获取阿里云示例实例。
         /// </summary>
         /// <returns>阿里云示例配置实例</returns>
-        public IUploader GetExample()
+        public object GetExample()
         {
             return new AliyunUploader()
             {

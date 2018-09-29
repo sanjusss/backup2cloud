@@ -1,23 +1,18 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using Backup2Cloud.Conf;
+using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Storage.V1;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Uploader
 {
     /// <summary>
     /// 谷歌云存储上传实现类
     /// </summary>
-    [ProviderName("google")]
+    [Name("google")]
     public class GoogleCloudStorageUploader : IUploader
     {
-        /// <summary>
-        /// 服务商名称
-        /// </summary>
-        public string Name => "google";
         /// <summary>
         /// 服务账号密钥文件位置
         /// </summary>
@@ -47,7 +42,7 @@ namespace Backup2Cloud.Worker
         /// 获取示例实例。
         /// </summary>
         /// <returns>示例配置实例</returns>
-        public IUploader GetExample()
+        public object GetExample()
         {
             return new GoogleCloudStorageUploader()
             {

@@ -1,24 +1,16 @@
-﻿using Backup2Cloud.Logging;
-using Newtonsoft.Json;
+﻿using Backup2Cloud.Conf;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using UCloudSDK;
-using UCloudSDK.Models;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Uploader
 {
     /// <summary>
     /// UCloud对象存储上传实现类。
     /// </summary>
-    [ProviderName("ucloud")]
+    [Name("ucloud")]
     public class UCloudUploader : IUploader
     {
-        /// <summary>
-        /// 服务商名称
-        /// </summary>
-        public string Name => "ucloud";
         /// <summary>
         /// UCloud 公钥
         /// </summary>
@@ -59,7 +51,7 @@ namespace Backup2Cloud.Worker
         /// 获取UCloud示例实例。
         /// </summary>
         /// <returns>UCloud示例配置实例</returns>
-        public IUploader GetExample()
+        public object GetExample()
         {
             return new UCloudUploader()
             {

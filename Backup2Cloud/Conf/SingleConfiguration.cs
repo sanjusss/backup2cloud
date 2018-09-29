@@ -1,4 +1,5 @@
-﻿using Backup2Cloud.Worker;
+﻿using Backup2Cloud.DataSource;
+using Backup2Cloud.Uploader;
 using System.Collections.Generic;
 
 namespace Backup2Cloud.Conf
@@ -24,16 +25,9 @@ namespace Backup2Cloud.Conf
         public HashSet<string> crontab;
 
         /// <summary>
-        /// 打包备份文件夹或文件之前额外执行的命令。
-        /// 可以为空。
+        /// 数据源
         /// </summary>
-        public string command;
-
-        /// <summary>
-        /// 打包备份文件夹或文件之前额外执行的命令的参数。
-        /// 可以为空。
-        /// </summary>
-        public string commandArgs;
+        public IDataSource dataSource;
 
         /// <summary>
         /// 上传设置
@@ -50,8 +44,7 @@ namespace Backup2Cloud.Conf
                 return "name：任务名称；" +
                     "path：需要备份的文件夹或文件在本地的路径；" +
                     "crontab：启动备份的时间集合，可以参考http://cron.qqe2.com/，使用时需要注意时区；" +
-                    "command：打包备份文件夹或文件之前额外执行的命令，例如备份数据库等，使用docker容器时须注意执行环境，可以为空；" +
-                    "commandArgs：打包备份文件夹或文件之前额外执行的命令的参数，，可以为空；" +
+                    "dataSource：数据源，可以为空；" +
                     "uploader：上传设置";
             }
         }

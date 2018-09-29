@@ -1,24 +1,19 @@
 ﻿using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
+using Backup2Cloud.Conf;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Backup2Cloud.Worker
+namespace Backup2Cloud.Uploader
 {
     /// <summary>
     /// AWS S3上传实现类。
     /// </summary>
-    [ProviderName("aws")]
+    [Name("aws")]
     public class AwsUploader : IUploader
     {
-        /// <summary>
-        /// 服务商名称
-        /// </summary>
-        public string Name => "aws";
         /// <summary>
         /// 区域的系统名
         /// </summary>
@@ -57,7 +52,7 @@ namespace Backup2Cloud.Worker
         /// 获取示例实例。
         /// </summary>
         /// <returns>示例配置实例</returns>
-        public IUploader GetExample()
+        public object GetExample()
         {
             return new AwsUploader()
             {
