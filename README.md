@@ -67,7 +67,6 @@ docker run --rm -v /D/share:/conf sanjusss/backup2cloud eg -s /conf/eg.json
 ```
 运行后将在D:\share\eg.json生成示例配置文件。  
 如果省略`-s /conf/eg.json`，将不保存文件，仅在命令行下输出。  
-示例文件 [点我](https://github.com/sanjusss/backup2cloud/blob/master/example.json)  
 实际的配置文件中没有Tips一项。  
 
 # 使用方法(Windows)
@@ -86,7 +85,6 @@ backup2cloud eg -s D:\share\eg.json
 ```
 运行后将在D:\share\eg.json生成示例配置文件。  
 如果省略`-s D:\share\eg.json`，将不保存文件，仅在命令行下输出。  
-示例文件 [点我](https://github.com/sanjusss/backup2cloud/blob/master/example.json)  
 实际的配置文件中没有Tips一项。  
 
 # 配置文件说明
