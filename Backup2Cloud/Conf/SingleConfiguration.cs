@@ -7,7 +7,7 @@ namespace Backup2Cloud.Conf
     /// <summary>
     /// 单条备份配置
     /// </summary>
-    public struct SingleConfiguration : IConfigurable
+    public class SingleConfiguration : IConfigurable
     {
         /// <summary>
         /// 任务名称

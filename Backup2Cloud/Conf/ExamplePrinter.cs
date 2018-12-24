@@ -1,4 +1,5 @@
 ﻿using Backup2Cloud.Args;
+using Backup2Cloud.DataSource;
 using Backup2Cloud.Logging;
 using Backup2Cloud.Uploader;
 using Newtonsoft.Json;
@@ -21,38 +22,103 @@ namespace Backup2Cloud.Conf
         public static void Print(ExampleOptions options)
         {
             var uploaders = NamedInterfaceLoader.Load(typeof(IUploader));
-            List<SingleConfiguration> configurations = new List<SingleConfiguration>();
-            string[] crontab = { "0,30 * * * * ?" };
-            foreach (var i in uploaders)
+            var dataSources = NamedInterfaceLoader.Load(typeof(IDataSource));
+            string content = string.Empty;
+            if (string.IsNullOrEmpty(options.List) == false)
             {
-                SingleConfiguration single = new SingleConfiguration()
+                if (options.List == "datasource")
                 {
-                    uploader = (Activator.CreateInstance(i.Value) as IUploader).GetExample() as IUploader,
-                    name = "上传到 " + i.Key,
-                    path = "/data",
-                    crontab = new HashSet<string>(crontab)
-                };
-
-                configurations.Add(single);
+                    content = string.Join('\n', dataSources.Keys);
+                    Console.WriteLine("已支持以下数据源：");
+                }
+                else if (options.List == "uploader")
+                {
+                    content = string.Join('\n', uploaders.Keys);
+                    Console.WriteLine("已支持以下上传类：");
+                }
+                else
+                {
+                    Console.WriteLine("只能列出 datasource 或 uploader");
+                }
+            }
+            else if (string.IsNullOrEmpty(options.Uploader) == false)
+            {
+                if (uploaders.ContainsKey(options.Uploader))
+                {
+                    content = JsonConvert.SerializeObject((Activator.CreateInstance(uploaders[options.Uploader]) as IExampled).GetExample(),
+                        Formatting.Indented,
+                        new NameConverter());
+                }
+                else
+                {
+                    Console.WriteLine($"不存在uploader类： { options.Uploader }");
+                }
+            }
+            else if (string.IsNullOrEmpty(options.DataSource) == false)
+            {
+                if (dataSources.ContainsKey(options.DataSource))
+                {
+                    content = JsonConvert.SerializeObject((Activator.CreateInstance(dataSources[options.DataSource]) as IExampled).GetExample(),
+                        Formatting.Indented,
+                        new NameConverter());
+                }
+                else
+                {
+                    Console.WriteLine($"不存在datasource类： { options.DataSource }");
+                }
+            }
+            else
+            {
+                content = GetExampleConfig(uploaders, dataSources);
             }
 
-            string json = JsonConvert.SerializeObject(configurations, Formatting.Indented, new NameConverter());
-            Log.Info("\n\n示例文件：\n");
-            Console.WriteLine(json);
-            if (string.IsNullOrEmpty(options.Path) == false)
+            if (string.IsNullOrEmpty(content) == false)
             {
-                //保存到文件。
-                using (StreamWriter stream = new StreamWriter(options.Path, false, Encoding.UTF8))
+                Console.WriteLine(content);
+                if (string.IsNullOrEmpty(options.Path) == false)
                 {
-                    stream.Write(json);
-                }
+                    //保存到文件。
+                    using (StreamWriter stream = new StreamWriter(options.Path, false, Encoding.UTF8))
+                    {
+                        stream.Write(content);
+                    }
 
-                Log.Info(string.Format("示例文件已经保存到\"{0}\"。", options.Path));
+                    Console.WriteLine("\n\n");
+                    Log.Info(string.Format("文件已经保存到\"{0}\"。", options.Path));
+                }
             }
 
 #if !DEBUG
             Environment.Exit(0);
 #endif
+        }
+
+        private static string GetExampleConfig(Dictionary<string, Type> uploaders, Dictionary<string, Type> dataSources)
+        {
+            string[] crontab = { "0,30 * * * * ?" };
+            List<SingleConfiguration> configurations = new List<SingleConfiguration>();
+            SingleConfiguration single = new SingleConfiguration()
+            {
+                name = "上传到 ",
+                path = "/data",
+                crontab = new HashSet<string>(crontab)
+            };
+
+            if (uploaders.Count > 0)
+            {
+                var i = uploaders.GetEnumerator().Current;
+                single.uploader = (Activator.CreateInstance(i.Value) as IUploader).GetExample() as IUploader;
+                single.name += i.Key;
+            }
+
+            if (dataSources.Count > 0)
+            {
+                var i = dataSources.GetEnumerator().Current;
+                single.dataSource = (Activator.CreateInstance(i.Value) as IDataSource).GetExample() as IDataSource;
+            }
+
+            configurations.Add(single);
+            return JsonConvert.SerializeObject(configurations, Formatting.Indented, new NameConverter());
         }
     }
 }
