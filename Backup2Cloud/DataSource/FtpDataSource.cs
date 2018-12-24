@@ -1,6 +1,7 @@
 ﻿using Backup2Cloud.Conf;
 using Backup2Cloud.Logging;
 using FluentFTP;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -18,7 +19,12 @@ namespace Backup2Cloud.DataSource
         {
             get
             {
-                return string.Empty;
+                return "host:服务器主机名；" +
+                    "port：服务器的FTP端口；" +
+                    "user：用户名；" +
+                    "password：密码；" +
+                    "anonymous：是否使用匿名登陆；" +
+                    "path：在ftp上的路径，可以是文件或文件夹。";
             }
         }
 
@@ -41,7 +47,7 @@ namespace Backup2Cloud.DataSource
                 client.Connect();
                 if (client.DirectoryExists(path))
                 {
-                    int result = DownloadDirectory(path, "/", des, client);
+                    int result = DownloadDirectory(path, "/", FormatDirectoryName(des), client);
                     Log.Print($"从 ftp://{ host }:{ port }{ path } 成功下载 { result } 个文件到 { des } 。");
                 }
                 else
@@ -96,7 +102,7 @@ namespace Backup2Cloud.DataSource
 
             foreach (var i in dirs)
             {
-                result += DownloadDirectory(baseSrc, dir + i + "/", des + i + "/", client);
+                result += DownloadDirectory(baseSrc, dir + i + "/", des, client);
             }
 
             return result;

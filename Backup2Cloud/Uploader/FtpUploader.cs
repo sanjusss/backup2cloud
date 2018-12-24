@@ -9,13 +9,22 @@ using System.Threading.Tasks;
 
 namespace Backup2Cloud.Uploader
 {
+    /// <summary>
+    /// FTP上传实现类。
+    /// </summary>
+    [Name("ftp")]
     public class FtpUploader : BaseFtpConf, IUploader
     {
         public string Tips
         {
             get
             {
-                return string.Empty;
+                return "host:服务器主机名；" +
+                    "port：服务器的FTP端口；" +
+                    "user：用户名；" +
+                    "password：密码；" +
+                    "anonymous：是否使用匿名登陆；" +
+                    "path：在ftp上的路径前缀。";
             }
         }
 

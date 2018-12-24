@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Linq;
 
 namespace Backup2Cloud.Conf
 {
@@ -106,14 +107,14 @@ namespace Backup2Cloud.Conf
 
             if (uploaders.Count > 0)
             {
-                var i = uploaders.GetEnumerator().Current;
+                var i = uploaders.First();
                 single.uploader = (Activator.CreateInstance(i.Value) as IUploader).GetExample() as IUploader;
                 single.name += i.Key;
             }
 
             if (dataSources.Count > 0)
             {
-                var i = dataSources.GetEnumerator().Current;
+                var i = dataSources.First();
                 single.dataSource = (Activator.CreateInstance(i.Value) as IDataSource).GetExample() as IDataSource;
             }
 

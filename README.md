@@ -29,7 +29,7 @@
 |[金山云](https://www.ksyun.com)|[对象存储](https://www.ksyun.com/post/product/KS3)|![不支持](https://img.shields.io/badge/support-No-red.svg)|仅限企业用户|
 |[Azure](https://www.azure.cn/zh-cn/)|[Blob 存储](https://www.azure.cn/zh-cn/home/features/storage/blobs/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||
 |[Google Cloud](https://cloud.google.com)|[Google Cloud Storage](https://cloud.google.com/storage/)|![支持](https://img.shields.io/badge/support-Yes-green.svg)||  
-||FTP|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)||  
+|自定义|FTP|![支持](https://img.shields.io/badge/support-Yes-green.svg)||  
 
 # 支持的数据源
 
@@ -41,8 +41,8 @@
 |SQL Server|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
 |Oracle|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
 |自定义命令|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
-|FTP文件|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
-|FTP文件文件夹|![即将到来](https://img.shields.io/badge/support-Future-yellow.svg)|
+|FTP文件|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
+|FTP文件文件夹|![支持](https://img.shields.io/badge/support-Yes-green.svg)|
 
 # 支持的备份触发方式
 
@@ -68,6 +68,7 @@ docker run --rm -v /D/share:/conf sanjusss/backup2cloud eg -s /conf/eg.json
 运行后将在D:\share\eg.json生成示例配置文件。  
 如果省略`-s /conf/eg.json`，将不保存文件，仅在命令行下输出。  
 实际的配置文件中没有Tips一项。  
+其他配置参数见[查看示例](https://github.com/sanjusss/backup2cloud#查看示例)。
 
 # 使用方法(Windows)
 ### 下载
@@ -79,13 +80,35 @@ backup2cloud run -c D:\backup2cloud.json
 ```
 运行后程序将加载配置文件backup2cloud.json。
 
-### 查看示例配置文件
+### 查看示例
+1. 查看一个示例配置文件
 ```
 backup2cloud eg -s D:\share\eg.json
 ```
 运行后将在D:\share\eg.json生成示例配置文件。  
 如果省略`-s D:\share\eg.json`，将不保存文件，仅在命令行下输出。  
 实际的配置文件中没有Tips一项。  
+
+2. 查看所有上传类名称
+```
+backup2cloud eg -l uploader
+```
+
+3. 查看所有数据源类名称
+```
+backup2cloud eg -l datasource
+```
+
+4. 查看指定上传类示例
+```
+backup2cloud eg -u 上传类名称
+```
+
+5. 查看指定数据源类示例
+```
+backup2cloud eg -d 数据源类名称
+```
+
 
 # 配置文件说明
 待补充
