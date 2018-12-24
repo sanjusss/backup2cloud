@@ -10,6 +10,7 @@ namespace Backup2Cloud.DataSource
         /// <summary>
         /// 保存数据。
         /// </summary>
-        void SaveData();
+        /// <param name="des">保存的路径</param>
+        void SaveData(string des);
     }
 }

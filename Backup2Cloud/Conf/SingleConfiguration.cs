@@ -25,7 +25,8 @@ namespace Backup2Cloud.Conf
         public HashSet<string> crontab;
 
         /// <summary>
-        /// 数据源
+        /// 数据源。
+        /// 用来将数据保存到path。
         /// </summary>
         public IDataSource dataSource;
 

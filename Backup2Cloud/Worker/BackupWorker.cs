@@ -29,8 +29,11 @@ namespace Backup2Cloud.Worker
                     DateTime start = DateTime.Now;
                     Log.Info(string.Format("开始执行任务\"{0}\"。", conf.name), conf.name);
 
-                    conf.dataSource.SaveData();
-                    Log.Info("成功为数据源执行保存命令。", conf.name);
+                    if (conf.dataSource != null)
+                    {
+                        conf.dataSource.SaveData(conf.path);
+                        Log.Info("成功为数据源执行保存命令。", conf.name);
+                    }
 
                     string suffix = start.ToString("yyyyMMddHHmmss") + ".zip";
                     file = Compress(conf.path);
@@ -39,7 +42,7 @@ namespace Backup2Cloud.Worker
                     Log.Info("成功上传文件。", conf.name);
 
                     DateTime end = DateTime.Now;
-                    Log.Info(string.Format("任务\"{0}\"执行成功，用时{1}秒。", conf.name, (end - start).TotalSeconds), conf.name);
+                    Log.Info($"任务\"{ conf.name }\"执行成功，用时{ (end - start).TotalSeconds }秒。",  conf.name);
                 }
                 catch (Exception e)
                 {
@@ -108,7 +111,7 @@ namespace Backup2Cloud.Worker
             else
             {
                 // 都不是
-                throw new FileNotFoundException(string.Format("没有找到文件或目录\"{0}\"。", path));
+                throw new FileNotFoundException($"没有找到文件或目录\"{ path }\"。");
             }
 
             return zip;

@@ -34,7 +34,7 @@ namespace Backup2Cloud.DataSource
             get
             {
                 return "command：自定义命令；" +
-                    "params：自定义命令参数，可以为空。";
+                    "params：自定义命令参数，可以为空。如果包含\"{0}\"(没有空格)，将用配置文件的path替代。";
             }
         }
 
@@ -55,11 +55,11 @@ namespace Backup2Cloud.DataSource
         /// 运行自定义命令。
         /// </summary>
         /// <exception cref="OperationCanceledException"/>
-        public void SaveData()
+        public void SaveData(string des)
         {
             Process process = string.IsNullOrWhiteSpace(Params) ?
                                     Process.Start(Command) :
-                                    Process.Start(Command, Params);
+                                    Process.Start(Command, Params.Contains("{0}") ? string.Format(Params, des) : Params);
 #if DEBUG
             process.OutputDataReceived += (sender, e) => Log.Info(e.Data);
             process.BeginOutputReadLine();
